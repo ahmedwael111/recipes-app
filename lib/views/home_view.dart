@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipes_app/constants.dart';
+import 'package:recipes_app/widgets/coustom_card.dart';
+import 'package:recipes_app/widgets/list_view_ofCard.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -24,8 +26,33 @@ class HomeView extends StatelessWidget {
         ),
       ),
       body: const Column(
-        children: [Text(' Hey Ahmed ,Good Morning')],
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(' Hey Ahmed ,Good Morning'),
+          SizedBox(
+            height: 300,
+          ),
+          Categoryslistview(),
+          Categoryslistview(),
+        ],
       ),
+    );
+  }
+}
+
+class KindOfMealsItem extends StatelessWidget {
+  const KindOfMealsItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: const EdgeInsets.all(22),
+      elevation: 22,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(55),
+      ),
+      child: const Text('ahmed'),
     );
   }
 }
