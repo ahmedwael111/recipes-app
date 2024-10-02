@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:recipes_app/constants.dart';
-import 'package:recipes_app/widgets/coustom_card.dart';
+import 'package:recipes_app/widgets/Home_Appbar.dart';
+import 'package:recipes_app/widgets/carousel_widget.dart';
+import 'package:recipes_app/widgets/costom_BottomNavigationBar.dart';
+import 'package:recipes_app/widgets/coutom_HeadOfCategoriewList.dart';
 import 'package:recipes_app/widgets/list_view_ofCard.dart';
+import 'package:recipes_app/widgets/second_list_view_ofCard.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -9,50 +12,35 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Recipe',
-              style: TextStyle(
-                  color: kcolor, fontWeight: FontWeight.bold, fontSize: 26),
-            ),
-            Text(
-              'App',
-              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-            )
-          ],
-        ),
-      ),
+      appBar: homeAppBar(),
       body: const Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(' Hey Ahmed ,Good Morning'),
+          Text(
+            '   Hey Ahmed ,Good Morning',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
           SizedBox(
-            height: 300,
+            height: 10,
+          ),
+          SizedBox(height: 200, child: Carousel()),
+          SizedBox(
+            height: 20,
+          ),
+          CoutomHeadOfCategoriewList(
+            mainText: 'Main Categories',
           ),
           Categoryslistview(),
-          Categoryslistview(),
+          SizedBox(
+            height: 20,
+          ),
+          CoutomHeadOfCategoriewList(
+            mainText: 'Other Fames Dishs',
+          ),
+          SecondCategoryslistview(),
         ],
       ),
-    );
-  }
-}
-
-class KindOfMealsItem extends StatelessWidget {
-  const KindOfMealsItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.all(22),
-      elevation: 22,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(55),
-      ),
-      child: const Text('ahmed'),
+      bottomNavigationBar: const CostomBottomNavigationBar(),
     );
   }
 }

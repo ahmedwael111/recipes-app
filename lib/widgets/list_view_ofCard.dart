@@ -47,15 +47,18 @@ class _CategoryslistviewState extends State<Categoryslistview> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 195,
-      child: ListView.builder(
-        physics: const BouncingScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        itemCount: cardModels.length,
-        itemBuilder: (context, index) {
-          return CoustomCard(cardModel: cardModels[index]);
-        },
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: SizedBox(
+        height: 165,
+        child: ListView.builder(
+          physics: const BouncingScrollPhysics(),
+          scrollDirection: Axis.horizontal,
+          itemCount: cardModels.length,
+          itemBuilder: (context, index) {
+            return CoustomCard(cardModel: cardModels[index]);
+          },
+        ),
       ),
     );
   }

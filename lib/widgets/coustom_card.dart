@@ -18,9 +18,9 @@ class CoustomCard extends StatelessWidget {
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
                 color: Colors.grey.withOpacity(0.6),
-                spreadRadius: 1,
+                spreadRadius: 0,
                 blurRadius: 5,
-                offset: const Offset(3, 10))
+                offset: const Offset(0, 1))
           ]),
           child: Card(
             child: Column(
@@ -31,13 +31,13 @@ class CoustomCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     child: Image.network(
                       cardModel.image,
-                      height: 144,
+                      height: 120,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     )),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 2),
                   child: Text(
                     cardModel.name,
                     style: const TextStyle(fontSize: 22),

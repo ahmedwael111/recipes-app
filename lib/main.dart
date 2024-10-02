@@ -10,8 +10,9 @@ class RecipeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomeView(),
+    return MaterialApp(
+      theme: ThemeData.light(),
+      home: const HomeView(),
     );
   }
 }
