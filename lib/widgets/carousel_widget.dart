@@ -22,7 +22,7 @@ class Carousel extends StatelessWidget {
         autoPlayInterval: const Duration(seconds: 2), // Interval for autoplay
         viewportFraction: 0.9, // Adjust the visible part of next item
         aspectRatio: 16 / 9,
-        initialPage: 0,
+        initialPage: 5,
       ),
       items: imageUrls.map((imageUrl) {
         return Builder(

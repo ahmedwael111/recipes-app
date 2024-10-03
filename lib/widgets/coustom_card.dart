@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipes_app/models/card_model.dart';
+import 'package:recipes_app/views/meals_view.dart';
 
 class CoustomCard extends StatelessWidget {
   const CoustomCard({super.key, required this.cardModel});
@@ -8,7 +9,7 @@ class CoustomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigator.pushNamed(context, UpdateProductPage.id, arguments: productModel);
+        Navigator.pushNamed(context, MealsView.id,arguments: cardModel.name);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -17,7 +18,7 @@ class CoustomCard extends StatelessWidget {
           width: 200,
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
-                color: Colors.grey.withOpacity(0.6),
+                color: Colors.grey.withOpacity(0.3),
                 spreadRadius: 0,
                 blurRadius: 5,
                 offset: const Offset(0, 1))
