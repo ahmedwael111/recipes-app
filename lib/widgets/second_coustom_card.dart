@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:recipes_app/models/card_model.dart';
 import 'package:recipes_app/views/meals_view.dart';
+import 'package:recipes_app/views/oneMeal_view.dart';
 
-class CoustomCard extends StatelessWidget {
-  const CoustomCard({super.key, required this.cardModel});
+class SecondCoustomCard extends StatelessWidget {
+  const SecondCoustomCard({super.key, required this.cardModel});
   final CardModel cardModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, MealsView.id, arguments: cardModel.name);
+        Navigator.pushNamed(context, OneMealView.id, arguments: cardModel.name);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 4),
         child: Container(
-          height: 200,
+          height: 150,
           width: 200,
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
@@ -38,10 +39,22 @@ class CoustomCard extends StatelessWidget {
                     )),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 15, vertical: 2),
-                  child: Text(
-                    cardModel.name,
-                    style: const TextStyle(fontSize: 22),
+                      const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  child: ListTile(
+                    contentPadding: EdgeInsets.zero,
+                    title: Text(
+                      cardModel.name,
+                      style: const TextStyle(fontSize: 22),
+                    ),
+                    subtitle: const Row(
+                      children: [
+                        Icon(Icons.timelapse),
+                        Text(
+                          ' 55min',
+                          style: TextStyle(fontSize: 22),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

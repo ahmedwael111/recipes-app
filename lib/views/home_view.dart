@@ -8,13 +8,14 @@ import 'package:recipes_app/widgets/second_list_view_ofCard.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
-static String id = 'HomeView';
+  static String id = 'HomeView';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: homeAppBar(),
       body: const Column(
         crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             '   Hey Ahmed ,Good Morning',
