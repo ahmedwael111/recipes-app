@@ -42,10 +42,22 @@ class OneMealView extends StatelessWidget {
                   SizedBox(
                     width: 4,
                   ),
-                  Icon(
-                    Icons.favorite_sharp,
-                    size: 33,
-                    // color: Colors.white,
+                  Column(
+                    children: [
+                      Icon(
+                        Icons.favorite_sharp,
+                        size: 33,
+                        // color: Colors.white,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                        size: 33,
+                      )
+                    ],
                   )
                 ],
               ),

@@ -14,7 +14,7 @@ class CoustomCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 4),
         child: Container(
-          height: 200,
+          height: 150,
           width: 200,
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
@@ -25,8 +25,8 @@ class CoustomCard extends StatelessWidget {
           ]),
           child: Card(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              // mainAxisAlignment: MainAxisAlignment.center,
+              // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ClipRRect(
                     borderRadius: BorderRadius.circular(12),
@@ -38,10 +38,11 @@ class CoustomCard extends StatelessWidget {
                     )),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 15, vertical: 2),
+                      const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
                   child: Text(
                     cardModel.name,
                     style: const TextStyle(fontSize: 22),
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
               ],

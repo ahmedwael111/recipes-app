@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipes_app/constants.dart';
 import 'package:recipes_app/models/card_model.dart';
-import 'package:recipes_app/widgets/coustom_card.dart';
 import 'package:recipes_app/widgets/second_coustom_card.dart';
 
 class MealsView extends StatelessWidget {
@@ -63,7 +62,7 @@ class MealsView extends StatelessWidget {
         clipBehavior: Clip.none,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 1.09,
+            childAspectRatio: 1.25,
             crossAxisSpacing: 0,
             mainAxisSpacing: 10),
         itemBuilder: ((context, index) {

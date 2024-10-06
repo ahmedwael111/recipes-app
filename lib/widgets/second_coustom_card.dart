@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:recipes_app/models/card_model.dart';
-import 'package:recipes_app/views/meals_view.dart';
 import 'package:recipes_app/views/oneMeal_view.dart';
 
 class SecondCoustomCard extends StatelessWidget {
@@ -39,22 +38,13 @@ class SecondCoustomCard extends StatelessWidget {
                     )),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 6, vertical: 0),
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
                   child: ListTile(
                     contentPadding: EdgeInsets.zero,
                     title: Text(
                       cardModel.name,
                       style: const TextStyle(fontSize: 22),
                       overflow: TextOverflow.ellipsis,
-                    ),
-                    subtitle: const Row(
-                      children: [
-                        Icon(Icons.timelapse),
-                        Text(
-                          ' 55min',
-                          style: TextStyle(fontSize: 22),
-                        ),
-                      ],
                     ),
                   ),
                 ),
