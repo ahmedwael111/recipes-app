@@ -29,16 +29,18 @@ class OneMealView extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               child: Row(
                 children: [
-                  Text(
-                    'Lhe name of meal',
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      // color: Colors.white
+                  Flexible(
+                    child: Text(
+                      'Lhe name of meal ahmed wael mohmed hassan yahia  asdfd sfsdfsdf f dfsa',
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        // color: Colors.white
+                      ),
                     ),
                   ),
-                  Spacer(
-                    flex: 1,
+                  SizedBox(
+                    width: 4,
                   ),
                   Icon(
                     Icons.favorite_sharp,

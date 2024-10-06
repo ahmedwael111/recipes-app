@@ -21,7 +21,7 @@ class CoustomTabbarView extends StatelessWidget {
                       Column(
                         children: [
                           Text(
-                            'Serves',
+                            'Servings',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 18),
                           ),

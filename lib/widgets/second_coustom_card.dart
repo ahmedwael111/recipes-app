@@ -33,18 +33,19 @@ class SecondCoustomCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     child: Image.network(
                       cardModel.image,
-                      height: 120,
+                      height: 100,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     )),
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                      const EdgeInsets.symmetric(horizontal: 6, vertical: 0),
                   child: ListTile(
                     contentPadding: EdgeInsets.zero,
                     title: Text(
                       cardModel.name,
                       style: const TextStyle(fontSize: 22),
+                      overflow: TextOverflow.ellipsis,
                     ),
                     subtitle: const Row(
                       children: [

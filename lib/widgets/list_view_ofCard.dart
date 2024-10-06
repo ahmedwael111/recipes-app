@@ -50,7 +50,7 @@ class _CategoryslistviewState extends State<Categoryslistview> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: SizedBox(
-        height: 165,
+        height: 163,
         child: ListView.builder(
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,

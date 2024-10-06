@@ -63,7 +63,7 @@ class MealsView extends StatelessWidget {
         clipBehavior: Clip.none,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 0.97,
+            childAspectRatio: 1.09,
             crossAxisSpacing: 0,
             mainAxisSpacing: 10),
         itemBuilder: ((context, index) {
