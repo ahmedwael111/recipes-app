@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:recipes_app/models/card_model.dart';
+import 'package:recipes_app/models/meals_model.dart';
 import 'package:recipes_app/views/oneMeal_view.dart';
 
 class SecondCoustomCard extends StatelessWidget {
-  const SecondCoustomCard({super.key, required this.cardModel});
-  final CardModel cardModel;
+  const SecondCoustomCard({super.key, required this.mealsModel});
+  final MealsModel mealsModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, OneMealView.id, arguments: cardModel.name);
+        Navigator.pushNamed(context, OneMealView.id, arguments: mealsModel.title);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -31,7 +31,7 @@ class SecondCoustomCard extends StatelessWidget {
                 ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: Image.network(
-                      cardModel.image,
+                      mealsModel.image,
                       height: 100,
                       width: double.infinity,
                       fit: BoxFit.cover,
@@ -42,7 +42,7 @@ class SecondCoustomCard extends StatelessWidget {
                   child: ListTile(
                     contentPadding: EdgeInsets.zero,
                     title: Text(
-                      cardModel.name,
+                      mealsModel.title,
                       style: const TextStyle(fontSize: 22),
                       overflow: TextOverflow.ellipsis,
                     ),
