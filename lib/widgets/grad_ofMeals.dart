@@ -11,21 +11,27 @@ class GradOfMeal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<MealsModel> mealsList =
-        BlocProvider.of<RequestMealsCubit>(context).mealsList!;
-    return GridView.builder(
-      itemCount: mealsList.length,
-      clipBehavior: Clip.none,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 1.25,
-          crossAxisSpacing: 0,
-          mainAxisSpacing: 10),
-      itemBuilder: ((context, index) {
-        return SecondCoustomCard(
-          mealsModel: mealsList[index],
-        );
-      }),
-    );
+    if (BlocProvider.of<RequestMealsCubit>(context).mealsList != null) {
+      List<MealsModel> mealsList =
+          BlocProvider.of<RequestMealsCubit>(context).mealsList!;
+      debugPrint(mealsList.length.toString());
+
+      return GridView.builder(
+        itemCount: mealsList.length,
+        clipBehavior: Clip.none,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 1.25,
+            crossAxisSpacing: 0,
+            mainAxisSpacing: 10),
+        itemBuilder: ((context, index) {
+          return SecondCoustomCard(
+            mealsModel: mealsList[index],
+          );
+        }),
+      );
+    } else {
+      return const Text('No meals found');
+    }
   }
 }

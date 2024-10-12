@@ -9,7 +9,8 @@ class SecondCoustomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, OneMealView.id, arguments: mealsModel.title);
+        Navigator.pushNamed(context, OneMealView.id,
+            arguments: mealsModel.title);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 4),

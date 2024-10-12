@@ -6,6 +6,9 @@ class MealsModel {
   MealsModel({required this.id, required this.image, required this.title});
   factory MealsModel.fromJson(json) {
     return MealsModel(
-        id: json['id'], image: json['image'], title: json['title']);
+      id: json['id'] ?? 0, // Provide default value if null
+      image: json['image'] ?? '',
+      title: json['title'] ?? 'Unknown Title',
+    );
   }
 }

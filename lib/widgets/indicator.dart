@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipes_app/constants.dart';
 
 class Indicator extends StatelessWidget {
   const Indicator({super.key});
@@ -7,10 +8,10 @@ class Indicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
         child: CircularProgressIndicator(
-      color: Colors.amber,
-      backgroundColor: Colors.red,
-      strokeWidth: 7,
-      strokeAlign: 3,
+      color: kcolor,
+      // backgroundColor: Colors.red,
+      strokeWidth: 5,
+      strokeAlign: 4,
     ));
   }
 }

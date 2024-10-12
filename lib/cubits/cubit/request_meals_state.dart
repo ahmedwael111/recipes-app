@@ -1,4 +1,3 @@
-part of 'request_meals_cubit.dart';
 
 class RequestMealsState {}
 

@@ -1,5 +1,5 @@
 class CardModel {
-  final String image;
+  final String? image;
   final String name;
   final String time;
 

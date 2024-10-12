@@ -31,7 +31,7 @@ class CoustomCard extends StatelessWidget {
                 ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: Image.network(
-                      cardModel.image,
+                      cardModel.image!,
                       height: 120,
                       width: double.infinity,
                       fit: BoxFit.cover,
