@@ -40,10 +40,7 @@ class MealsView extends StatelessWidget {
             return const GradOfMeal();
           } else if (state is RequestMealsFaluier) {
             return Center(
-              child: Text(
-                state.errorMessage,
-                style: const TextStyle(fontSize: 22),
-              ),
+              child: Text(state.errorMessage),
             );
           } else {
             return const Center(child: Text('try ahmed'));
