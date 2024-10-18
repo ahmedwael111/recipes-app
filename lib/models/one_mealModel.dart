@@ -1,9 +1,9 @@
 class OneMealModel {
-  final int id;
+  final dynamic id;
   final String title;
   final String image;
-  final int readyInMinutes;
-  final int servings;
+  final dynamic readyInMinutes;
+  final dynamic servings;
   final String sourceUrl;
   final List<Ingredient> ingredients;
   final Nutrition nutrition;
@@ -21,7 +21,7 @@ class OneMealModel {
     required this.instructions,
   });
 
-  factory OneMealModel.fromJson(Map<String, dynamic> json) {
+  factory OneMealModel.fromJson(json) {
     // Parsing the list of ingredients
     List<Ingredient> ingredientsList = (json['extendedIngredients'] as List)
         .map((ingredient) => Ingredient.fromJson(ingredient))
@@ -31,10 +31,12 @@ class OneMealModel {
     Nutrition nutrition = Nutrition.fromJson(json['nutrition']);
 
     // Parsing instructions
-    List<InstructionStep> instructionsList = (json['analyzedInstructions'] as List)
-        .expand((instruction) => (instruction['steps'] as List)) // Combine all steps
-        .map((step) => InstructionStep.fromJson(step))
-        .toList();
+    List<InstructionStep> instructionsList =
+        (json['analyzedInstructions'] as List)
+            .expand((instruction) =>
+                (instruction['steps'] as List)) // Combine all steps
+            .map((step) => InstructionStep.fromJson(step))
+            .toList();
 
     return OneMealModel(
       id: json['id'],
@@ -51,9 +53,9 @@ class OneMealModel {
 }
 
 class Ingredient {
-  final int id;
+  final dynamic id;
   final String name;
-  final double amount;
+  final dynamic amount;
   final String unit;
   final String original;
   final String imageUrl;
@@ -67,25 +69,26 @@ class Ingredient {
     required this.imageUrl,
   });
 
-  factory Ingredient.fromJson(Map<String, dynamic> json) {
+  factory Ingredient.fromJson(json) {
     return Ingredient(
       id: json['id'],
       name: json['name'],
-      amount: json['amount'].toDouble(),
+      amount: json['amount'],
       unit: json['unit'],
       original: json['original'],
-      imageUrl: json['image'] ?? '', // Handle null image
+      imageUrl: json['image'] ??
+          'assets/webvilla-hv1MrBzGGNY-unsplash.jpg', // Handle null image
     );
   }
 }
 
 class Nutrition {
-  final double calories;
-  final double carbohydrates;
-  final double fat;
-  final double protein;
-  final double fiber;
-  final double sugar;
+  final dynamic calories;
+  final dynamic carbohydrates;
+  final dynamic fat;
+  final dynamic protein;
+  final dynamic fiber;
+  final dynamic sugar;
 
   Nutrition({
     required this.calories,
@@ -96,20 +99,20 @@ class Nutrition {
     required this.sugar,
   });
 
-  factory Nutrition.fromJson(Map<String, dynamic> json) {
+  factory Nutrition.fromJson(json) {
     return Nutrition(
-      calories: json['calories'].toDouble(),
-      carbohydrates: json['carbohydrates'].toDouble(),
-      fat: json['fat'].toDouble(),
-      protein: json['protein'].toDouble(),
-      fiber: json['fiber'].toDouble(),
-      sugar: json['sugar'].toDouble(),
+      calories: json['calories'],
+      carbohydrates: json['carbohydrates'],
+      fat: json['fat'],
+      protein: json['protein'],
+      fiber: json['fiber'],
+      sugar: json['sugar'],
     );
   }
 }
 
 class InstructionStep {
-  final int number;
+  final dynamic number;
   final String step;
 
   InstructionStep({
@@ -117,7 +120,7 @@ class InstructionStep {
     required this.step,
   });
 
-  factory InstructionStep.fromJson(Map<String, dynamic> json) {
+  factory InstructionStep.fromJson(json) {
     return InstructionStep(
       number: json['number'],
       step: json['step'],

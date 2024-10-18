@@ -1,96 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:recipes_app/constants.dart';
 import 'package:recipes_app/cubits/cubit/one_meal_cubit.dart';
-import 'package:recipes_app/widgets/tabBar_view.dart';
+import 'package:recipes_app/models/meals_model.dart';
+import 'package:recipes_app/views/meals_view.dart';
+import 'package:recipes_app/widgets/indicator.dart';
+import 'package:recipes_app/widgets/showen_ofMeal.dart';
 
 class OneMealView extends StatelessWidget {
   const OneMealView({super.key});
   static String id = 'oneMealView';
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => OneMealCubit(),
-      child: DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          body: ListView(
-            children: [
-              Stack(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(32),
-                    child: Image.network(
-                      'https://media.istockphoto.com/id/1222851180/photo/french-breakfast.jpg?s=2048x2048&w=is&k=20&c=Pqu70LY-SZFgbDgKScyrgB4FgR9LJKsn_iagm6ZF-_Q=',
-                      height: 200,
-                      width: double.infinity,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ],
+    MealsModel mealsModel =
+        ModalRoute.of(context)!.settings.arguments as MealsModel;
+    BlocProvider.of<OneMealCubit>(context).getOneMeal(mealid: mealsModel.id);
+    return Scaffold(
+      body: BlocBuilder<OneMealCubit, OneMealState>(
+        builder: (context, state) {
+          if (state is OneMealInitial) {
+            return const InitialIcon();
+          } else if (state is OneMealLoading) {
+            return const Indicator();
+          } else if (state is OneMealSuccess) {
+            return  ShowenOfMeal(oneMealModel: state.oneMealModel,);
+          } else if (state is OneMealFuilure) {
+            return Center(
+              child: Text(
+                state.errorMessage,
+                style: const TextStyle(fontSize: 28),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                child: Row(
-                  children: [
-                    Flexible(
-                      child: Text(
-                        'Lhe name of meal ahmed wael mohmed hassan yahia  asdfd sfsdfsdf f dfsa',
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                          // color: Colors.white
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 4,
-                    ),
-                    Column(
-                      children: [
-                        Icon(
-                          Icons.favorite_sharp,
-                          size: 33,
-                          // color: Colors.white,
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Icon(
-                          Icons.star,
-                          color: Colors.amber,
-                          size: 33,
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              const Divider(),
-              const TabBar(
-                  // controller: ,
-                  indicatorColor: kcolor,
-                  indicatorWeight: 5,
-                  labelColor: kcolor,
-                  labelStyle:
-                      TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  tabs: [
-                    Tab(
-                      text: 'Information',
-                      height: 33,
-                    ),
-                    Tab(
-                      text: 'Ingradiants',
-                    ),
-                    Tab(
-                      text: 'Instractions',
-                    )
-                  ]),
-              // TabBarView wrapped in a fixed height container to display content
-              const CoustomTabbarView(),
-            ],
-          ),
-        ),
+            );
+          } else {
+            return const Center(child: Text('try ahmed'));
+          }
+        },
       ),
     );
   }

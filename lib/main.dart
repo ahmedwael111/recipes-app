@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:recipes_app/cubits/cubit/one_meal_cubit.dart';
 import 'package:recipes_app/cubits/cubit/request_meals_cubit.dart';
 import 'package:recipes_app/views/home_view.dart';
 import 'package:recipes_app/views/meals_view.dart';
@@ -14,8 +15,15 @@ class RecipeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => RequestMealsCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => RequestMealsCubit(),
+        ),
+        BlocProvider(
+          create: (context) => OneMealCubit(),
+        )
+      ],
       child: MaterialApp(
         theme: ThemeData.light(),
         routes: {

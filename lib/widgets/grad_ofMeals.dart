@@ -6,15 +6,14 @@ import 'package:recipes_app/widgets/second_coustom_card.dart';
 
 class GradOfMeal extends StatelessWidget {
   const GradOfMeal({
-    super.key,
+    super.key, required this.mealsList,
   });
-
+final List<MealsModel> mealsList ;
   @override
   Widget build(BuildContext context) {
-    if (BlocProvider.of<RequestMealsCubit>(context).mealsList != null) {
-      List<MealsModel> mealsList =
-          BlocProvider.of<RequestMealsCubit>(context).mealsList!;
-      debugPrint(mealsList.length.toString());
+    // if (BlocProvider.of<RequestMealsCubit>(context). != null) {
+    //   List<MealsModel> mealsList =
+    //       BlocProvider.of<RequestMealsCubit>(context).mealsList!;
 
       return GridView.builder(
         itemCount: mealsList.length,
@@ -30,8 +29,8 @@ class GradOfMeal extends StatelessWidget {
           );
         }),
       );
-    } else {
-      return const Text('No meals found');
-    }
+    // } else {
+    //   return const Text('No meals found');
+    // }
   }
 }

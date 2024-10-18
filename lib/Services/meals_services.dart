@@ -11,8 +11,10 @@ class MealsServices {
   MealsServices({required this.dio});
   Future<List<MealsModel>> getMealsServices({required String mealType}) async {
     try {
+      log('requist url : $baseUrl/complexSearch?apiKey=$apiKey&query=$mealType&number=10&offset=0');
       Response response = await dio.get(
-          '$baseUrl/complexSearch?apiKey=$apiKey&query=$mealType&number=100');
+          '$baseUrl/complexSearch?apiKey=$apiKey&query=$mealType&number=10&offset=0');
+
       Map<String, dynamic> data = response.data;
       List<dynamic> dataList = data['results'];
 
@@ -27,7 +29,7 @@ class MealsServices {
           e.response?.data['error']['message'] ?? 'Oops there was an error';
       throw Exception(exeption);
     } catch (e) {
-      log(e.toString());
+      // log(e.toString());
       throw Exception('ther wass an error');
     }
   }

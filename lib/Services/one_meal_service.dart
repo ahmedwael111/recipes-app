@@ -17,12 +17,12 @@ class OneMealService {
       return oneMealModel;
     } on DioException catch (e) {
       log('Dio Error: ${e.toString()}'); // Log the full Dio exception
-      String message = e.response?.data?['error']?['message'] ??
+     final String message = e.response?.data?['error']?['message'] ??
           'Unknown error occurred, try late';
       throw Exception(message);
     } catch (e) {
       log(e.toString());
-      throw Exception('ther wass an error');
+      throw Exception('there was an error');
     }
   }
 }
