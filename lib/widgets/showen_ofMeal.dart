@@ -11,12 +11,10 @@ class ShowenOfMeal extends StatelessWidget {
   final OneMealModel oneMealModel;
   @override
   Widget build(BuildContext context) {
-    // OneMealModel oneMealModel =
-    //     BlocProvider.of<OneMealCubit>(context).oneMealModel;
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        body: ListView(
+        body: Column(
           children: [
             Stack(
               children: [
@@ -33,40 +31,20 @@ class ShowenOfMeal extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-              child: Row(
-                children: [
-                  Flexible(
-                    child: Text(
-                      oneMealModel.title,
-                      style: const TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        // color: Colors.white
-                      ),
+              child: ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(
+                    oneMealModel.title,
+                    style: const TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(
-                    width: 4,
-                  ),
-                  const Column(
-                    children: [
-                      Icon(
-                        Icons.favorite_sharp,
-                        size: 33,
-                        // color: Colors.white,
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: Colors.amber,
-                        size: 33,
-                      )
-                    ],
-                  )
-                ],
-              ),
+                  trailing: const Icon(
+                    Icons.favorite_sharp, color: Colors.red,
+                    size: 38,
+                    // color: Colors.white,
+                  )),
             ),
             const Divider(),
             const TabBar(

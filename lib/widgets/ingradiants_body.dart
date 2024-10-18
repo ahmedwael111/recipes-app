@@ -12,7 +12,7 @@ class IngradiantsBody extends StatelessWidget {
     final List<Ingredient> ingradiantList = oneMealModel.ingredients;
 
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 12),
       child: ListView.builder(
         itemCount: ingradiantList.length,
         itemBuilder: (context, index) {
@@ -33,37 +33,34 @@ class IngradiantItem extends StatelessWidget {
   final Ingredient ingredient;
   @override
   Widget build(BuildContext context) {
-    // final String imageUrl = ingredient.imageUrl;
-    // bool imageState = false;
-    // if (imageUrl.startsWith('http')) {
-    //   imageState = true;
-    // }
+    final String imageUrl = ingredient.imageUrl;
+    bool imageState = false;
+    if (imageUrl.startsWith('http')) {
+      imageState = true;
+    }
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 6),
-      child: Row(
-        children: [
-          Flexible(
-            child: Text(
-              '•  ${ingredient.original}',
-              style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-            ),
+      child: ListTile(
+          contentPadding: EdgeInsets.zero,
+          horizontalTitleGap: 2,
+          leading: const Text(
+            '•',
+            style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
           ),
-          // SizedBox(
-          //   height: 2,
-          //   width: 2,
-          //   child: imageState
-          //       ? Image.network(
-          //           imageUrl,
-          //           // scale: 1.0,
-          //         )
-          //       : Image.asset(
-          //           'assets/webvilla-hv1MrBzGGNY-unsplash.jpg',
-          //           // scale: 1.0,
-          //         ),
-          // )
-        ],
-      ),
+          title: Text(
+            ingredient.original,
+            style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+          ),
+          trailing: imageState
+              ? Image.network(
+                  imageUrl,
+                  // scale: 1.0,
+                )
+              : Image.asset(
+                  'assets/webvilla-hv1MrBzGGNY-unsplash.jpg',
+                  // scale: 1.0,
+                )),
     );
   }
 }

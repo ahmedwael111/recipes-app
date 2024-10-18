@@ -29,7 +29,7 @@ class InformationBody extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    const Text('ready time',
+                    const Text('Total time',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18)),
                     Text(
