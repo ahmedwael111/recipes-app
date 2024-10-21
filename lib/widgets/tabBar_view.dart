@@ -10,7 +10,6 @@ class CoustomTabbarView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      // height: 200, // Set an appropriate height for the content
       child: TabBarView(
         children: [
           // Information tab content

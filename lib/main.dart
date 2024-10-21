@@ -7,6 +7,7 @@ import 'package:recipes_app/views/meals_view.dart';
 import 'package:recipes_app/views/oneMeal_view.dart';
 
 void main() {
+    WidgetsFlutterBinding.ensureInitialized(); // Ensures plugins are initialized before the app starts
   runApp(const RecipeApp());
 }
 

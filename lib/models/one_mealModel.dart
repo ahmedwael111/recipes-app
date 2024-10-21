@@ -6,7 +6,7 @@ class OneMealModel {
   final dynamic servings;
   final String sourceUrl;
   final List<Ingredient> ingredients;
-  final Nutrition nutrition;
+  final List<Nutrient> nutrients;
   final List<InstructionStep> instructions; // New field
 
   OneMealModel({
@@ -17,7 +17,7 @@ class OneMealModel {
     required this.servings,
     required this.sourceUrl,
     required this.ingredients,
-    required this.nutrition,
+    required this.nutrients,
     required this.instructions,
   });
 
@@ -28,7 +28,9 @@ class OneMealModel {
         .toList();
 
     // Parsing nutrition information
-    Nutrition nutrition = Nutrition.fromJson(json['nutrition']);
+     List<Nutrient> nutrientsList = (json['nutrition']['nutrients'] as List)
+        .map((nutrient) => Nutrient.fromJson(nutrient))
+        .toList();
 
     // Parsing instructions
     List<InstructionStep> instructionsList =
@@ -46,7 +48,7 @@ class OneMealModel {
       servings: json['servings'],
       sourceUrl: json['sourceUrl'],
       ingredients: ingredientsList,
-      nutrition: nutrition,
+      nutrients: nutrientsList,
       instructions: instructionsList, // Assign parsed instructions
     );
   }
@@ -82,34 +84,6 @@ class Ingredient {
   }
 }
 
-class Nutrition {
-  final dynamic calories;
-  final dynamic carbohydrates;
-  final dynamic fat;
-  final dynamic protein;
-  final dynamic fiber;
-  final dynamic sugar;
-
-  Nutrition({
-    required this.calories,
-    required this.carbohydrates,
-    required this.fat,
-    required this.protein,
-    required this.fiber,
-    required this.sugar,
-  });
-
-  factory Nutrition.fromJson(json) {
-    return Nutrition(
-      calories: json['calories'],
-      carbohydrates: json['carbohydrates'],
-      fat: json['fat'],
-      protein: json['protein'],
-      fiber: json['fiber'],
-      sugar: json['sugar'],
-    );
-  }
-}
 
 class InstructionStep {
   final dynamic number;
@@ -124,6 +98,27 @@ class InstructionStep {
     return InstructionStep(
       number: json['number'],
       step: json['step'],
+    );
+  }
+}
+
+class Nutrient {
+  final String name;
+  final double amount;
+  final String unit;
+
+  Nutrient({
+    required this.name,
+    required this.amount,
+    required this.unit,
+  });
+
+  // Factory constructor to parse nutrient details
+  factory Nutrient.fromJson(Map<String, dynamic> json) {
+    return Nutrient(
+      name: json['name'],
+      amount: json['amount'].toDouble(),
+      unit: json['unit'],
     );
   }
 }

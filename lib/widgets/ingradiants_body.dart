@@ -39,28 +39,25 @@ class IngradiantItem extends StatelessWidget {
       imageState = true;
     }
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6),
-      child: ListTile(
-          contentPadding: EdgeInsets.zero,
-          horizontalTitleGap: 2,
-          leading: const Text(
-            '•',
-            style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-          ),
-          title: Text(
-            ingredient.original,
-            style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-          ),
-          trailing: imageState
-              ? Image.network(
-                  imageUrl,
-                  // scale: 1.0,
-                )
-              : Image.asset(
-                  'assets/webvilla-hv1MrBzGGNY-unsplash.jpg',
-                  // scale: 1.0,
-                )),
-    );
+    return ListTile(
+        contentPadding: EdgeInsets.zero,
+        horizontalTitleGap: 2,
+        leading: const Text(
+          '•',
+          style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+        ),
+        title: Text(
+          ingredient.original,
+          style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+        ),
+        trailing: imageState
+            ? Image.network(
+                imageUrl,
+                // scale: 1.0,
+              )
+            : Image.asset(
+                'assets/webvilla-hv1MrBzGGNY-unsplash.jpg',
+                // scale: 1.0,
+              ));
   }
 }
