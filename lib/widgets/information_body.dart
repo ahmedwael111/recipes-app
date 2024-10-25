@@ -6,18 +6,15 @@ class InformationBody extends StatelessWidget {
   const InformationBody({super.key, required this.oneMealModel});
   final OneMealModel oneMealModel;
 
-  //  final String url = 'https://flutter.dev'; // The URL to open when clicked
-
   // Function to open the link
-  void _launchURL(BuildContext context) async {
-    final Uri uri = Uri.parse(
-        oneMealModel.sourceUrl); // Convert the String URL to a Uri object
+  Future<void> _launchURL(String url) async {
+    // final String url = oneMealModel.sourceUrl; // The URL to open when clicked
+
+    Uri uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Could not launch $uri')),
-      );
+      throw 'Could not launch $url';
     }
   }
 
@@ -26,7 +23,7 @@ class InformationBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
       child: Column(
-        // crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -56,7 +53,7 @@ class InformationBody extends StatelessWidget {
           ),
           const Divider(),
           const Text(
-            'The Nutrition',
+            'The Nutrition :',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           Expanded(
@@ -139,7 +136,7 @@ class InformationBody extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 12),
+                  padding: const EdgeInsets.only(bottom: 0),
                   child: Column(
                     children: [
                       const Text('Sugar',
@@ -155,38 +152,37 @@ class InformationBody extends StatelessWidget {
               ],
             ),
           ),
+          const Divider(),
+          const Text(
+            'Link of Recipe on Site:',
+            style: TextStyle(fontSize: 22),
+          ),
           GestureDetector(
-            onTap: () =>
-                _launchURL(context), // Handle tap event to launch the URL
+            onTap: () => _launchURL(oneMealModel
+                .spoonacularSourceUrl), // Handle tap event to launch the URL
             child: Container(
               width: double.infinity,
               height: 60,
               decoration: const BoxDecoration(
                 // color: Colors.white,
                 shape: BoxShape.rectangle, // Shape of the container (circle)
-                // boxShadow: [
-                //   BoxShadow(
-                //     color: Colors.grey.withOpacity(0.5),
-                //     spreadRadius: 5,
-                //     blurRadius: 7,
-                //     offset: const Offset(0, 3),
-                //   ),
-                // ],
               ),
               child: Center(
                 child: Text(
-                  oneMealModel.sourceUrl,
+                  oneMealModel.spoonacularSourceUrl,
                   style: const TextStyle(
-                    color: Colors.blue,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                      color: Colors.blue,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.blue,
+                      decorationStyle: TextDecorationStyle.solid),
                 ),
               ),
             ),
           ),
           const SizedBox(
-            height: 100,
+            height: 50,
           )
         ],
       ),

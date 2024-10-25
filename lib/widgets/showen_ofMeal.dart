@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipes_app/constants.dart';
+import 'package:recipes_app/cubits/cubit/one_meal_cubit.dart';
 import 'package:recipes_app/models/one_mealModel.dart';
 import 'package:recipes_app/widgets/tabBar_view.dart';
 
 class ShowenOfMeal extends StatelessWidget {
   const ShowenOfMeal({
     super.key,
-    required this.oneMealModel,
   });
-  final OneMealModel oneMealModel;
+  // final OneMealModel oneMealModel;
   @override
   Widget build(BuildContext context) {
+    OneMealModel oneMealModel =
+        BlocProvider.of<OneMealCubit>(context).oneMealModel!;
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -19,7 +22,7 @@ class ShowenOfMeal extends StatelessWidget {
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(32),
+                  borderRadius: BorderRadius.circular(18),
                   child: Image.network(
                     oneMealModel.image,
                     height: 200,

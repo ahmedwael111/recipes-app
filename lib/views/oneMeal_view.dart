@@ -13,7 +13,7 @@ class OneMealView extends StatelessWidget {
   Widget build(BuildContext context) {
     MealsModel mealsModel =
         ModalRoute.of(context)!.settings.arguments as MealsModel;
-    BlocProvider.of<OneMealCubit>(context).getOneMeal(mealid: mealsModel.id);
+    BlocProvider.of<OneMealCubit>(context).getOneMeal(meal_id: mealsModel.id);
     return Scaffold(
       body: BlocBuilder<OneMealCubit, OneMealState>(
         builder: (context, state) {
@@ -22,7 +22,7 @@ class OneMealView extends StatelessWidget {
           } else if (state is OneMealLoading) {
             return const Indicator();
           } else if (state is OneMealSuccess) {
-            return  ShowenOfMeal(oneMealModel: state.oneMealModel,);
+            return const ShowenOfMeal();
           } else if (state is OneMealFuilure) {
             return Center(
               child: Text(

@@ -37,7 +37,7 @@ class MealsView extends StatelessWidget {
           } else if (state is RequestMealsLoading) {
             return const Indicator();
           } else if (state is RequestMealsSuccess) {
-            return  GradOfMeal(mealsList:state.mealsList,);
+            return  GradOfMeal();
           } else if (state is RequestMealsFaluier) {
             return Center(
               child: Text(

@@ -4,7 +4,7 @@ class OneMealModel {
   final String image;
   final dynamic readyInMinutes;
   final dynamic servings;
-  final String sourceUrl;
+  final String spoonacularSourceUrl;
   final List<Ingredient> ingredients;
   final List<Nutrient> nutrients;
   final List<InstructionStep> instructions; // New field
@@ -15,7 +15,7 @@ class OneMealModel {
     required this.image,
     required this.readyInMinutes,
     required this.servings,
-    required this.sourceUrl,
+    required this.spoonacularSourceUrl,
     required this.ingredients,
     required this.nutrients,
     required this.instructions,
@@ -28,7 +28,7 @@ class OneMealModel {
         .toList();
 
     // Parsing nutrition information
-     List<Nutrient> nutrientsList = (json['nutrition']['nutrients'] as List)
+    List<Nutrient> nutrientsList = (json['nutrition']['nutrients'] as List)
         .map((nutrient) => Nutrient.fromJson(nutrient))
         .toList();
 
@@ -46,7 +46,7 @@ class OneMealModel {
       image: json['image'],
       readyInMinutes: json['readyInMinutes'],
       servings: json['servings'],
-      sourceUrl: json['sourceUrl'],
+      spoonacularSourceUrl: json['spoonacularSourceUrl'],
       ingredients: ingredientsList,
       nutrients: nutrientsList,
       instructions: instructionsList, // Assign parsed instructions
@@ -83,7 +83,6 @@ class Ingredient {
     );
   }
 }
-
 
 class InstructionStep {
   final dynamic number;
