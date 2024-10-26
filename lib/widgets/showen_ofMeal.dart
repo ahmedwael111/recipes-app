@@ -5,15 +5,22 @@ import 'package:recipes_app/cubits/cubit/one_meal_cubit.dart';
 import 'package:recipes_app/models/one_mealModel.dart';
 import 'package:recipes_app/widgets/tabBar_view.dart';
 
-class ShowenOfMeal extends StatelessWidget {
+class ShowenOfMeal extends StatefulWidget {
   const ShowenOfMeal({
     super.key,
   });
-  // final OneMealModel oneMealModel;
+
+  @override
+  State<ShowenOfMeal> createState() => _ShowenOfMealState();
+}
+
+class _ShowenOfMealState extends State<ShowenOfMeal> {
+  OneMealModel? oneMealModel;
   @override
   Widget build(BuildContext context) {
-    OneMealModel oneMealModel =
-        BlocProvider.of<OneMealCubit>(context).oneMealModel!;
+    setState(() {
+      oneMealModel = BlocProvider.of<OneMealCubit>(context).oneMealModel!;
+    });
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -24,7 +31,7 @@ class ShowenOfMeal extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(18),
                   child: Image.network(
-                    oneMealModel.image,
+                    oneMealModel!.image,
                     height: 200,
                     width: double.infinity,
                     fit: BoxFit.cover,
@@ -37,7 +44,7 @@ class ShowenOfMeal extends StatelessWidget {
               child: ListTile(
                   contentPadding: EdgeInsets.zero,
                   title: Text(
-                    oneMealModel.title,
+                    oneMealModel!.title,
                     style: const TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
@@ -71,7 +78,7 @@ class ShowenOfMeal extends StatelessWidget {
                 ]),
             // TabBarView wrapped in a fixed height container to display content
             CoustomTabbarView(
-              oneMealModel: oneMealModel,
+              oneMealModel: oneMealModel!,
             ),
           ],
         ),

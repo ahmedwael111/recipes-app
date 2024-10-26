@@ -9,8 +9,7 @@ class SecondCoustomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, OneMealView.id,
-            arguments: mealsModel);
+        Navigator.pushNamed(context, OneMealView.id, arguments: mealsModel);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -19,7 +18,7 @@ class SecondCoustomCard extends StatelessWidget {
           width: 200,
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
-                color: Colors.grey.withOpacity(0.3),
+                color: Colors.black.withOpacity(0.3),
                 spreadRadius: 0,
                 blurRadius: 5,
                 offset: const Offset(0, 1))
@@ -36,6 +35,14 @@ class SecondCoustomCard extends StatelessWidget {
                       height: 100,
                       width: double.infinity,
                       fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        // Replace with your own placeholder asset or network URL
+                        return Image.asset(
+                            'assets/webvilla-hv1MrBzGGNY-unsplash.jpg',
+                            height: 100,
+                            width: double.infinity,
+                            fit: BoxFit.cover);
+                      },
                     )),
                 Padding(
                   padding:

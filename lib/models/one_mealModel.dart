@@ -55,32 +55,18 @@ class OneMealModel {
 }
 
 class Ingredient {
-  final dynamic id;
-  final String name;
-  final dynamic amount;
-  final String unit;
   final String original;
   final String imageUrl;
 
   Ingredient({
-    required this.id,
-    required this.name,
-    required this.amount,
-    required this.unit,
     required this.original,
     required this.imageUrl,
   });
 
   factory Ingredient.fromJson(json) {
     return Ingredient(
-      id: json['id'],
-      name: json['name'],
-      amount: json['amount'],
-      unit: json['unit'],
-      original: json['original'],
-      imageUrl: json['image'] ??
-          'assets/webvilla-hv1MrBzGGNY-unsplash.jpg', // Handle null image
-    );
+        original: json['original'], imageUrl: json['image'] // Handle null image
+        );
   }
 }
 

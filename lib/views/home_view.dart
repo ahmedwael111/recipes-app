@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:recipes_app/constants.dart';
-import 'package:recipes_app/views/search_view.dart';
 import 'package:recipes_app/widgets/Home_Appbar.dart';
 import 'package:recipes_app/widgets/c_text_field.dart';
 import 'package:recipes_app/widgets/carousel_widget.dart';

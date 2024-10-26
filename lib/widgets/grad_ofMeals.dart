@@ -4,17 +4,24 @@ import 'package:recipes_app/cubits/cubit/request_meals_cubit.dart';
 import 'package:recipes_app/models/meals_model.dart';
 import 'package:recipes_app/widgets/second_coustom_card.dart';
 
-class GradOfMeal extends StatelessWidget {
+class GradOfMeal extends StatefulWidget {
   const GradOfMeal({
     super.key,
   });
-// final List<MealsModel> mealsList ;
+
+  @override
+  State<GradOfMeal> createState() => _GradOfMealState();
+}
+
+class _GradOfMealState extends State<GradOfMeal> {
+  List<MealsModel>? mealsList;
   @override
   Widget build(BuildContext context) {
-    List<MealsModel> mealsList =
-        BlocProvider.of<RequestMealsCubit>(context).mealsList!;
+    setState(() {
+      mealsList = BlocProvider.of<RequestMealsCubit>(context).mealsList!;
+    });
     return GridView.builder(
-      itemCount: mealsList.length,
+      itemCount: mealsList!.length,
       clipBehavior: Clip.none,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
@@ -23,7 +30,7 @@ class GradOfMeal extends StatelessWidget {
           mainAxisSpacing: 10),
       itemBuilder: ((context, index) {
         return SecondCoustomCard(
-          mealsModel: mealsList[index],
+          mealsModel: mealsList![index],
         );
       }),
     );

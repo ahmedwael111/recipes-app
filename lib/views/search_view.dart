@@ -7,9 +7,14 @@ import 'package:recipes_app/widgets/c2_text_field.dart';
 import 'package:recipes_app/widgets/grad_ofMeals.dart';
 import 'package:recipes_app/widgets/indicator.dart';
 
-class SearchView extends StatelessWidget {
+class SearchView extends StatefulWidget {
   const SearchView({super.key});
 
+  @override
+  State<SearchView> createState() => _SearchViewState();
+}
+
+class _SearchViewState extends State<SearchView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +38,7 @@ class SearchView extends StatelessWidget {
                 } else if (state is RequestMealsLoading) {
                   return const Indicator();
                 } else if (state is RequestMealsSuccess) {
-                  return const GradOfMeal();
+                  return  GradOfMeal();
                 } else if (state is RequestMealsFaluier) {
                   return Center(
                     child: Text(

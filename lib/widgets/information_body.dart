@@ -56,8 +56,9 @@ class InformationBody extends StatelessWidget {
             'The Nutrition :',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
-          Expanded(
+          SingleChildScrollView(
             child: GridView(
+              shrinkWrap: true,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 childAspectRatio: 2.0,
                 crossAxisCount: 3, // Number of columns

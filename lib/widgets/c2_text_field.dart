@@ -3,18 +3,26 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipes_app/constants.dart';
 import 'package:recipes_app/cubits/cubit/request_meals_cubit.dart';
 
-class C2Textfield extends StatelessWidget {
+class C2Textfield extends StatefulWidget {
   const C2Textfield({
     super.key,
   });
 
+  @override
+  State<C2Textfield> createState() => _C2TextfieldState();
+}
+
+class _C2TextfieldState extends State<C2Textfield> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: TextField(
         onSubmitted: (value) {
-          BlocProvider.of<RequestMealsCubit>(context).getMeals(mealName: value);
+          setState(() {
+            BlocProvider.of<RequestMealsCubit>(context)
+                .getMeals(mealName: value);
+          });
         },
         cursorColor: kcolor,
         decoration: InputDecoration(
