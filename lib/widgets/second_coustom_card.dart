@@ -18,8 +18,8 @@ class SecondCoustomCard extends StatelessWidget {
           width: 200,
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
-                color: Colors.black.withOpacity(0.3),
-                spreadRadius: 0,
+                color: Colors.grey.withOpacity(0.4),
+                spreadRadius: 2,
                 blurRadius: 5,
                 offset: const Offset(0, 1))
           ]),

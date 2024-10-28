@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:recipes_app/constants.dart';
 
 class CostomBottomNavigationBar extends StatelessWidget {
@@ -25,11 +26,11 @@ class CostomBottomNavigationBar extends StatelessWidget {
         unselectedFontSize: 12.0,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(FontAwesomeIcons.house),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
+            icon: Icon(FontAwesomeIcons.magnifyingGlass),
             label: 'Search',
           )
         ]);
