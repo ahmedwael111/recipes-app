@@ -17,7 +17,7 @@ class CostomTextfield extends StatelessWidget {
         );
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 30),
         child: TextField(
           enabled: false, // Disable text editing
           decoration: InputDecoration(

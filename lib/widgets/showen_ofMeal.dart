@@ -30,12 +30,16 @@ class _ShowenOfMealState extends State<ShowenOfMeal> {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(18),
-                  child: Image.network(
-                    oneMealModel!.image,
-                    height: 200,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
+                  child: Image.network(oneMealModel!.image,
+                      height: 300, width: double.infinity, fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                    // Replace with your own placeholder asset or network URL
+                    return Image.asset(
+                        'assets/webvilla-hv1MrBzGGNY-unsplash.jpg',
+                        height: 300,
+                        width: double.infinity,
+                        fit: BoxFit.cover);
+                  }),
                 ),
               ],
             ),

@@ -27,8 +27,9 @@ class _C2TextfieldState extends State<C2Textfield> {
         cursorColor: kcolor,
         decoration: InputDecoration(
           filled: true,
+          fillColor: Colors.grey.shade100,
           hintText: 'Search',
-          hintStyle: const TextStyle(color: Colors.grey, fontSize: 22),
+          hintStyle: const TextStyle(color: Colors.grey, fontSize: 20),
           prefixIcon: const Icon(Icons.search),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),

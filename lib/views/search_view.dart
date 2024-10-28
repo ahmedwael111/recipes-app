@@ -19,11 +19,11 @@ class _SearchViewState extends State<SearchView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        bottom: const PreferredSize(
-            preferredSize: Size(double.infinity, 50), child: C2Textfield()),
+        // bottom: const PreferredSize(
+        //     preferredSize: Size(double.infinity, 50), child: C2Textfield()),
         automaticallyImplyLeading: false,
-        // leadingWidth: 0,
-        // title: const SizedBox(height: 55, child: C2Textfield()),
+        leadingWidth: 0,
+        title: const SizedBox(height: 55, child: C2Textfield()),
       ),
       body: Column(
         children: [
