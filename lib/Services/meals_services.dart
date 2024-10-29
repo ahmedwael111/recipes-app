@@ -25,8 +25,8 @@ class MealsServices {
       }
       return mealsList;
     } on DioException catch (e) {
-      final String exeption =
-          e.response?.data['error']['message'] ?? 'Oops there was an error';
+      final String exeption = e.response?.data['error']['message'] ??
+          'NO Internet Conection,try later!';
       throw Exception(exeption);
     } catch (e) {
       // log(e.toString());

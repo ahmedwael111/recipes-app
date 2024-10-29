@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:recipes_app/constants.dart';
 import 'package:recipes_app/cubits/cubit/request_meals_cubit.dart';
 import 'package:recipes_app/cubits/cubit/request_meals_state.dart';
+import 'package:recipes_app/views/search_view.dart';
 import 'package:recipes_app/widgets/grad_ofMeals.dart';
 import 'package:recipes_app/widgets/indicator.dart';
+import 'package:recipes_app/widgets/message_no_internet.dart';
 
 class MealsView extends StatelessWidget {
   const MealsView({super.key});
@@ -39,15 +42,7 @@ class MealsView extends StatelessWidget {
           } else if (state is RequestMealsSuccess) {
             return  GradOfMeal();
           } else if (state is RequestMealsFaluier) {
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(
-                child: Text(
-                  state.errorMessage,
-                  style: const TextStyle(fontSize: 22),
-                ),
-              ),
-            );
+            return const MessageOfNoInterNet();
           } else {
             return const Center(child: Text('try ahmed'));
           }
@@ -65,9 +60,21 @@ class InitialIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-        child: Icon(
-      Icons.emoji_emotions_sharp,
-      size: 55,
+        child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          FontAwesomeIcons.searchengin,
+          size: 55,
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Text(
+          'Let\'s Search for Meals',
+          style: TextStyle(fontSize: 18),
+        )
+      ],
     ));
   }
 }

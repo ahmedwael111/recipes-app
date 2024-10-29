@@ -33,12 +33,6 @@ class InstractionItem extends StatelessWidget {
   final InstructionStep instructionStep;
   @override
   Widget build(BuildContext context) {
-    // final String imageUrl = ingredient.imageUrl;
-    // bool imageState = false;
-    // if (imageUrl.startsWith('http')) {
-    //   imageState = true;
-    // }
-
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Row(
@@ -51,19 +45,6 @@ class InstractionItem extends StatelessWidget {
               ),
             ),
           ),
-          // SizedBox(
-          //   height: 2,
-          //   width: 2,
-          //   child: imageState
-          //       ? Image.network(
-          //           imageUrl,
-          //           // scale: 1.0,
-          //         )
-          //       : Image.asset(
-          //           'assets/webvilla-hv1MrBzGGNY-unsplash.jpg',
-          //           // scale: 1.0,
-          //         ),
-          // )
         ],
       ),
     );

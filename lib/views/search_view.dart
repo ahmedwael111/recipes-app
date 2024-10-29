@@ -6,6 +6,7 @@ import 'package:recipes_app/views/meals_view.dart';
 import 'package:recipes_app/widgets/c2_text_field.dart';
 import 'package:recipes_app/widgets/grad_ofMeals.dart';
 import 'package:recipes_app/widgets/indicator.dart';
+import 'package:recipes_app/widgets/message_no_internet.dart';
 
 class SearchView extends StatefulWidget {
   const SearchView({super.key});
@@ -19,8 +20,6 @@ class _SearchViewState extends State<SearchView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // bottom: const PreferredSize(
-        //     preferredSize: Size(double.infinity, 50), child: C2Textfield()),
         automaticallyImplyLeading: false,
         leadingWidth: 0,
         title: const SizedBox(height: 55, child: C2Textfield()),
@@ -40,12 +39,7 @@ class _SearchViewState extends State<SearchView> {
                 } else if (state is RequestMealsSuccess) {
                   return  GradOfMeal();
                 } else if (state is RequestMealsFaluier) {
-                  return Center(
-                    child: Text(
-                      state.errorMessage,
-                      style: const TextStyle(fontSize: 22),
-                    ),
-                  );
+                  return const MessageOfNoInterNet();
                 } else {
                   return const Center(child: Text('try ahmed'));
                 }

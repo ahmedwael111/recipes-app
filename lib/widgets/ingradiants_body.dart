@@ -33,12 +33,6 @@ class IngradiantItem extends StatelessWidget {
   final Ingredient ingredient;
   @override
   Widget build(BuildContext context) {
-    // final String imageUrl = ingredient.imageUrl;
-    // bool imageState = false;
-    // if (imageUrl.startsWith('http')) {
-    //   imageState = true;
-    // }
-
     return ListTile(
       contentPadding: EdgeInsets.zero,
       horizontalTitleGap: 2,

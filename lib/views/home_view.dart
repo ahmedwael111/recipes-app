@@ -36,7 +36,6 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       appBar: AppBar(
         title: Row(
-          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
               'Recipe',
@@ -53,12 +52,7 @@ class _HomeViewState extends State<HomeView> {
             Transform.scale(
               scale: 0.4,
               child: DayNightSwitch(
-                // size: const Size(120, 2),
                 value: val,
-                // moonImage: const AssetImage('assets/moon.png'),
-                // sunImage: const AssetImage('assets/sun.png'),
-                // sunColor: sunColor,
-                // moonColor: moonColor,
                 dayColor: kcolor,
                 nightColor: Colors.black,
                 onChanged: (value) {

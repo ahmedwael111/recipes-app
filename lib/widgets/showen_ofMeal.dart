@@ -46,15 +46,15 @@ class _ShowenOfMealState extends State<ShowenOfMeal> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               child: ListTile(
-                  contentPadding: EdgeInsets.zero,
-                  title: Text(
-                    oneMealModel!.title,
-                    style: const TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                    ),
+                contentPadding: EdgeInsets.zero,
+                title: Text(
+                  oneMealModel!.title,
+                  style: const TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
                   ),
-                  trailing: null),
+                ),
+              ),
             ),
             const Divider(),
             const TabBar(
