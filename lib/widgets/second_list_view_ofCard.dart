@@ -16,31 +16,31 @@ class _SecondCategoryslistviewState extends State<SecondCategoryslistview> {
   final List<CardModel> cardModels2 = [
     CardModel(
       image:
-          'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Pizza image
+          'assets/second_meals_asset/ivan-torres-MQUqbmszGGM-unsplash.jpg', // Pizza image
       name: 'Pizza',
       time: '20 mins',
     ),
     CardModel(
       image:
-          'https://plus.unsplash.com/premium_photo-1677000666761-ff476a65c8ba?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Pasta image
+          'assets/second_meals_asset/mae-mu-Pvclb-iHHYY-unsplash.jpg', // Pasta image
       name: 'Pasta',
       time: '30 mins',
     ),
     CardModel(
       image:
-          'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1899&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Burger image
+          'assets/second_meals_asset/amirali-mirhashemian-sc5sTPMrVfk-unsplash.jpg', // Burger image
       name: 'Burger',
       time: '25 mins',
     ),
     CardModel(
       image:
-          'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Salad image
+          'assets/second_meals_asset/anna-pelzer-IGfIGP5ONV0-unsplash.jpg', // Salad image
       name: 'Salad',
       time: '15 mins',
     ),
     CardModel(
       image:
-          'https://images.unsplash.com/photo-1683315446874-e6a629087ef8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Steak image
+          'assets/second_meals_asset/thanti-riess-hH-tGYgv07M-unsplash.jpg', // Steak image
       name: 'Steak',
       time: '45 mins',
     ),

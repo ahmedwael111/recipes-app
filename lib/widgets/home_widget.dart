@@ -14,7 +14,7 @@ class HomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         SizedBox(height: 55, child: CostomTextfield()),
         SizedBox(

@@ -54,11 +54,7 @@ class _ShowenOfMealState extends State<ShowenOfMeal> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  trailing: const Icon(
-                    Icons.favorite_sharp, color: Colors.red,
-                    size: 38,
-                    // color: Colors.white,
-                  )),
+                  trailing: null),
             ),
             const Divider(),
             const TabBar(

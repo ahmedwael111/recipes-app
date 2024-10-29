@@ -4,6 +4,7 @@ class OneMealModel {
   final String image;
   final dynamic readyInMinutes;
   final dynamic servings;
+  final dynamic aggregateLikes;
   final String spoonacularSourceUrl;
   final List<Ingredient> ingredients;
   final List<Nutrient> nutrients;
@@ -15,6 +16,7 @@ class OneMealModel {
     required this.image,
     required this.readyInMinutes,
     required this.servings,
+    required this.aggregateLikes,
     required this.spoonacularSourceUrl,
     required this.ingredients,
     required this.nutrients,
@@ -46,6 +48,7 @@ class OneMealModel {
       image: json['image'],
       readyInMinutes: json['readyInMinutes'],
       servings: json['servings'],
+      aggregateLikes: json['aggregateLikes'],
       spoonacularSourceUrl: json['spoonacularSourceUrl'],
       ingredients: ingredientsList,
       nutrients: nutrientsList,

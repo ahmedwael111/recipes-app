@@ -51,6 +51,19 @@ class InformationBody extends StatelessWidget {
                     )
                   ],
                 ),
+                Column(
+                  children: [
+                    const Icon(
+                      Icons.star, color: Colors.amber,
+                      size: 32,
+                      // color: Colors.white,
+                    ),
+                    Text(
+                      oneMealModel.aggregateLikes.toString(),
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                  ],
+                ),
               ],
             ),
             const Divider(),

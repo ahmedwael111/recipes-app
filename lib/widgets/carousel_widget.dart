@@ -3,11 +3,11 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 class Carousel extends StatelessWidget {
   final List<String> imageUrls = const [
-    'https://plus.unsplash.com/premium_photo-1664640733617-56652d5a5cee?q=80&w=1868&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Breakfast image
-    'https://images.unsplash.com/photo-1432139555190-58524dae6a55?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Lunch image
-    'https://images.unsplash.com/photo-1487790343276-2fe56a7d9439?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Dinner image
-    'https://images.unsplash.com/photo-1470549813517-2fa741d25c92?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Snacks image
-    'https://media.istockphoto.com/id/1468860049/photo/fitness-woman-eating-a-healthy-poke-bowl-in-the-kitchen-at-home.webp?a=1&b=1&s=612x612&w=0&k=20&c=FQFGxzgKu78lGZP8_4Kvuz3rJqrsE4Q61qXeMuIMcxw=', // Dessert image
+    'assets/carousel_assets/syd-wachs-epqNIYI6S7E-unsplash.jpg', // Breakfast image
+    'assets/carousel_assets/mae-mu-I7A_pHLcQK8-unsplash.jpg', // Lunch image
+    'assets/carousel_assets/brooke-lark-BepcnEnnoPs-unsplash.jpg', // Dinner image
+    'assets/carousel_assets/alex-munsell-Yr4n8O_3UPc-unsplash.jpg', // Snacks image
+    'assets/carousel_assets/alex-munsell-auIbTAcSH6E-unsplash.jpg', // Dessert image
   ];
 
   const Carousel({super.key});
@@ -41,7 +41,7 @@ class Carousel extends StatelessWidget {
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
-                child: Image.network(
+                child: Image.asset(
                   imageUrl,
                   fit: BoxFit.cover,
                   width: double.infinity,

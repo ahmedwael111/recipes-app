@@ -47,8 +47,8 @@ class _HomeViewState extends State<HomeView> {
               'App',
               style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(
-              width: 133,
+            const Spacer(
+              flex: 1,
             ),
             Transform.scale(
               scale: 0.4,
