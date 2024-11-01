@@ -13,19 +13,19 @@ class RowOfInformation extends StatelessWidget {
           children: [
             const Text(
               'Servings',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
             ),
             Text(oneMealModel.servings.toString(),
-                style: const TextStyle(fontSize: 16))
+                style: const TextStyle(fontSize: 12))
           ],
         ),
         Column(
           children: [
             const Text('Total time',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
             Text(
               '${oneMealModel.readyInMinutes.toString()} min',
-              style: const TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 12),
             )
           ],
         ),
@@ -33,12 +33,12 @@ class RowOfInformation extends StatelessWidget {
           children: [
             const Icon(
               Icons.star, color: Colors.amber,
-              size: 32,
+              size: 28,
               // color: Colors.white,
             ),
             Text(
               oneMealModel.aggregateLikes.toString(),
-              style: const TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 12),
             ),
           ],
         ),

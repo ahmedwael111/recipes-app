@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipes_app/models/card_model.dart';
 import 'package:recipes_app/widgets/coustom_card.dart';
+import 'package:recipes_app/widgets/coutom_HeadOfCategoriewList.dart';
 
 class SecondCategoryslistview extends StatefulWidget {
   const SecondCategoryslistview({
@@ -50,16 +51,23 @@ class _SecondCategoryslistviewState extends State<SecondCategoryslistview> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
-      child: SizedBox(
-        height: 165,
-        child: ListView.builder(
-          physics: const BouncingScrollPhysics(),
-          scrollDirection: Axis.horizontal,
-          itemCount: cardModels2.length,
-          itemBuilder: (context, index) {
-            return CoustomCard(cardModel: cardModels2[index]);
-          },
-        ),
+      child: Column(
+        children: [
+          const CoutomHeadOfCategoriewList(
+            mainText: 'Other Fames Dishs',
+          ),
+          SizedBox(
+            height: 140,
+            child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              itemCount: cardModels2.length,
+              itemBuilder: (context, index) {
+                return CoustomCard(cardModel: cardModels2[index]);
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:recipes_app/constants.dart';
 import 'package:recipes_app/cubits/cubit/request_meals_cubit.dart';
 import 'package:recipes_app/cubits/cubit/request_meals_state.dart';
-import 'package:recipes_app/views/search_view.dart';
 import 'package:recipes_app/widgets/grad_ofMeals.dart';
 import 'package:recipes_app/widgets/indicator.dart';
 import 'package:recipes_app/widgets/message_no_internet.dart';
@@ -40,7 +39,7 @@ class MealsView extends StatelessWidget {
           } else if (state is RequestMealsLoading) {
             return const Indicator();
           } else if (state is RequestMealsSuccess) {
-            return  GradOfMeal();
+            return   GradOfMeal();
           } else if (state is RequestMealsFaluier) {
             return const MessageOfNoInterNet();
           } else {

@@ -29,7 +29,7 @@ class _C2TextfieldState extends State<C2Textfield> {
           filled: true,
           // fillColor: Colors.grey.shade100,
           hintText: 'Search',
-          hintStyle: const TextStyle(color: Colors.grey, fontSize: 20),
+          hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
           prefixIcon: const Icon(Icons.search),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),

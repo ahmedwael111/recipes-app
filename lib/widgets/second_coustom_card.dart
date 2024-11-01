@@ -51,7 +51,7 @@ class SecondCoustomCard extends StatelessWidget {
                     contentPadding: EdgeInsets.zero,
                     title: Text(
                       mealsModel.title,
-                      style: const TextStyle(fontSize: 22),
+                      style: const TextStyle(fontSize: 14),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),

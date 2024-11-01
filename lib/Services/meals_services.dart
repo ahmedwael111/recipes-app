@@ -13,7 +13,7 @@ class MealsServices {
     try {
       log('requist url : $baseUrl/complexSearch?apiKey=$apiKey&query=$mealType&number=10&offset=0');
       Response response = await dio.get(
-          '$baseUrl/complexSearch?apiKey=$apiKey&query=$mealType&number=10&offset=0');
+          '$baseUrl/complexSearch?apiKey=$apiKey&query=$mealType&number=10&offset=10');
 
       Map<String, dynamic> data = response.data;
       List<dynamic> dataList = data['results'];

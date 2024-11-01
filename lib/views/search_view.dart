@@ -22,7 +22,7 @@ class _SearchViewState extends State<SearchView> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leadingWidth: 0,
-        title: const SizedBox(height: 55, child: C2Textfield()),
+        title: const SizedBox(height: 45, child: C2Textfield()),
       ),
       body: Column(
         children: [
@@ -37,7 +37,7 @@ class _SearchViewState extends State<SearchView> {
                 } else if (state is RequestMealsLoading) {
                   return const Indicator();
                 } else if (state is RequestMealsSuccess) {
-                  return  GradOfMeal();
+                  return   GradOfMeal();
                 } else if (state is RequestMealsFaluier) {
                   return const MessageOfNoInterNet();
                 } else {

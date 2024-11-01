@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipes_app/models/card_model.dart';
 import 'package:recipes_app/widgets/coustom_card.dart';
+import 'package:recipes_app/widgets/coutom_HeadOfCategoriewList.dart';
 
 class Categoryslistview extends StatefulWidget {
   const Categoryslistview({
@@ -49,16 +50,23 @@ class _CategoryslistviewState extends State<Categoryslistview> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
-      child: SizedBox(
-        height: 163,
-        child: ListView.builder(
-          physics: const BouncingScrollPhysics(),
-          scrollDirection: Axis.horizontal,
-          itemCount: cardModels.length,
-          itemBuilder: (context, index) {
-            return CoustomCard(cardModel: cardModels[index]);
-          },
-        ),
+      child: Column(
+        children: [
+          const CoutomHeadOfCategoriewList(
+            mainText: 'Main Categories',
+          ),
+          SizedBox(
+            height: 140,
+            child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              itemCount: cardModels.length,
+              itemBuilder: (context, index) {
+                return CoustomCard(cardModel: cardModels[index]);
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -22,7 +22,7 @@ class OneMealView extends StatelessWidget {
           } else if (state is OneMealLoading) {
             return const Indicator();
           } else if (state is OneMealSuccess) {
-            return  ShowenOfMeal();
+            return   ShowenOfMeal();
           } else if (state is OneMealFuilure) {
             return Center(
               child: Text(

@@ -13,97 +13,75 @@ class GridOfNutrition extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: GridView(
+        padding: EdgeInsets.zero,
         shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          childAspectRatio: 2.0,
-          crossAxisCount: 3, // Number of columns
+          childAspectRatio: 2.1,
+          crossAxisCount: 2, // Number of columns
           crossAxisSpacing: 0, // Horizontal space between items
           mainAxisSpacing: 0,
         ),
         children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Column(
-              children: [
-                const Text('Calories',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                Text(
-                  '${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Calories', orElse: () => Nutrient(name: '', amount: 0, unit: 'g')).amount}  ${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Calories', orElse: () => Nutrient(name: '', amount: 0, unit: 'g')).unit}',
-                  style: const TextStyle(fontSize: 16),
-                )
-              ],
-            ),
+          Column(
+            children: [
+              const Text('Calories',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
+              Text(
+                '${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Calories', orElse: () => Nutrient(name: '', amount: 0, unit: 'g')).amount}  ${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Calories', orElse: () => Nutrient(name: '', amount: 0, unit: 'g')).unit}',
+                style: const TextStyle(fontSize: 12),
+              )
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Column(
-              children: [
-                const Text('Carbohydrates',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                Text(
-                  '${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Carbohydrates').amount} ${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Carbohydrates').unit}',
-                  style: const TextStyle(fontSize: 16),
-                )
-              ],
-            ),
+          Column(
+            children: [
+              const Text('Carbohydrates',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
+              Text(
+                '${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Carbohydrates').amount} ${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Carbohydrates').unit}',
+                style: const TextStyle(fontSize: 12),
+              )
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Column(
-              children: [
-                const Text('Fat',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                Text(
-                  '${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Fat').amount} ${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Fat').unit}',
-                  style: const TextStyle(fontSize: 16),
-                )
-              ],
-            ),
+          Column(
+            children: [
+              const Text('Fat',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
+              Text(
+                '${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Fat').amount} ${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Fat').unit}',
+                style: const TextStyle(fontSize: 12),
+              )
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Column(
-              children: [
-                const Text('Protein',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                Text(
-                  '${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Protein').amount} ${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Protein').unit}',
-                  style: const TextStyle(fontSize: 16),
-                )
-              ],
-            ),
+          Column(
+            children: [
+              const Text('Protein',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
+              Text(
+                '${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Protein').amount} ${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Protein').unit}',
+                style: const TextStyle(fontSize: 12),
+              )
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 12),
-            child: Column(
-              children: [
-                const Text('Fiber',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                Text(
-                  '${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Fiber', orElse: () => Nutrient(name: '', amount: 0, unit: 'g')).amount} ${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Fiber', orElse: () => Nutrient(name: '', amount: 0, unit: 'g')).unit}',
-                  style: const TextStyle(fontSize: 16),
-                )
-              ],
-            ),
+          Column(
+            children: [
+              const Text('Fiber',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
+              Text(
+                '${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Fiber', orElse: () => Nutrient(name: '', amount: 0, unit: 'g')).amount} ${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Fiber', orElse: () => Nutrient(name: '', amount: 0, unit: 'g')).unit}',
+                style: const TextStyle(fontSize: 12),
+              )
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 0),
-            child: Column(
-              children: [
-                const Text('Sugar',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                Text(
-                  '${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Sugar').amount} ${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Sugar').unit}',
-                  style: const TextStyle(fontSize: 16),
-                )
-              ],
-            ),
+          Column(
+            children: [
+              const Text('Sugar',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
+              Text(
+                '${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Sugar').amount} ${oneMealModel.nutrients.firstWhere((nutrient) => nutrient.name == 'Sugar').unit}',
+                style: const TextStyle(fontSize: 12),
+              )
+            ],
           ),
         ],
       ),

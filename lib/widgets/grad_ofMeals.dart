@@ -25,7 +25,7 @@ class _GradOfMealState extends State<GradOfMeal> {
       clipBehavior: Clip.none,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 1.25,
+          childAspectRatio: 1.09,
           crossAxisSpacing: 0,
           mainAxisSpacing: 10),
       itemBuilder: ((context, index) {

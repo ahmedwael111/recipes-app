@@ -16,24 +16,11 @@ class HomeWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        SizedBox(height: 55, child: CostomTextfield()),
-        SizedBox(
-          height: 5,
-        ),
+        SizedBox(height: 45, child: CostomTextfield()),
         SizedBox(height: 200, child: Carousel()),
-        SizedBox(
-          height: 20,
-        ),
-        CoutomHeadOfCategoriewList(
-          mainText: 'Main Categories',
-        ),
+        
         Categoryslistview(),
-        SizedBox(
-          height: 20,
-        ),
-        CoutomHeadOfCategoriewList(
-          mainText: 'Other Fames Dishs',
-        ),
+       
         SecondCategoryslistview(),
       ],
     );

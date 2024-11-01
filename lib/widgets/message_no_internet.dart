@@ -7,8 +7,7 @@ class MessageOfNoInterNet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 42),
+    return const Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -21,7 +20,11 @@ class MessageOfNoInterNet extends StatelessWidget {
             height: 20,
           ),
           Text(
-            'No Internet Connection',
+            'No Internet Connection ',
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            'Try later !',
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
         ],

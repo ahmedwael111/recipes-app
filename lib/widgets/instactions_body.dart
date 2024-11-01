@@ -14,6 +14,7 @@ class InstractionsBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
       child: ListView.builder(
+        padding: EdgeInsets.zero,
         itemCount: instractionList.length,
         itemBuilder: (context, index) {
           return InstractionItem(
@@ -41,7 +42,7 @@ class InstractionItem extends StatelessWidget {
             child: Text(
               '${instructionStep.number}) ${instructionStep.step}',
               style: const TextStyle(
-                fontSize: 26,
+                fontSize: 18,
               ),
             ),
           ),

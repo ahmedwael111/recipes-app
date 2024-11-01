@@ -23,7 +23,7 @@ class ContainerOfLink extends StatelessWidget {
           oneMealModel.spoonacularSourceUrl,
           style: const TextStyle(
               color: Colors.blue,
-              fontSize: 20,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
               decoration: TextDecoration.underline,
               decorationColor: Colors.blue,

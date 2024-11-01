@@ -14,6 +14,7 @@ class IngradiantsBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: ListView.builder(
+        padding: EdgeInsets.zero,
         itemCount: ingradiantList.length,
         itemBuilder: (context, index) {
           return IngradiantItem(
@@ -42,7 +43,7 @@ class IngradiantItem extends StatelessWidget {
       ),
       title: Text(
         ingredient.original,
-        style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       ),
     );
   }

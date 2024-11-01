@@ -24,7 +24,7 @@ class CostomTextfield extends StatelessWidget {
             filled: true,
             // fillColor: Colors.orange,
             hintText: 'Search',
-            hintStyle: const TextStyle(color: Colors.grey, fontSize: 18),
+            hintStyle: const TextStyle(color: Colors.grey, fontSize: 14),
             prefixIcon: const Icon(Icons.search),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),

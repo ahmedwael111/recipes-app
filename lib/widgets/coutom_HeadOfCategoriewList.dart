@@ -14,14 +14,14 @@ class CoutomHeadOfCategoriewList extends StatelessWidget {
         children: [
           Text(
             mainText,
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const Spacer(
             flex: 1,
           ),
           const Text(
             'See All ',
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(fontSize: 14),
           ),
           const Icon(
             Icons.arrow_forward_ios,

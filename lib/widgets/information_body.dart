@@ -31,15 +31,11 @@ class InformationBody extends StatelessWidget {
           children: [
             RowOfInformation(oneMealModel: oneMealModel),
             const Divider(),
-            const Text(
-              'The Nutrition :',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
             GridOfNutrition(oneMealModel: oneMealModel),
             const Divider(),
             const Text(
               'Link of Recipe on Site:',
-              style: TextStyle(fontSize: 22),
+              style: TextStyle(fontSize: 14),
             ),
             GestureDetector(
               onTap: () => _launchURL(oneMealModel

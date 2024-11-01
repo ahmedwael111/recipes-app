@@ -31,28 +31,24 @@ class _ShowenOfMealState extends State<ShowenOfMeal> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(18),
                   child: Image.network(oneMealModel!.image,
-                      height: 300, width: double.infinity, fit: BoxFit.cover,
+                      height: 250, width: double.infinity, fit: BoxFit.cover,
                       errorBuilder: (context, error, stackTrace) {
                     // Replace with your own placeholder asset or network URL
                     return Image.asset(
                         'assets/webvilla-hv1MrBzGGNY-unsplash.jpg',
-                        height: 300,
+                        height: 250,
                         width: double.infinity,
                         fit: BoxFit.cover);
                   }),
                 ),
               ],
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-              child: ListTile(
-                contentPadding: EdgeInsets.zero,
-                title: Text(
-                  oneMealModel!.title,
-                  style: const TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                  ),
+            ListTile(
+              title: Text(
+                oneMealModel!.title,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
@@ -63,11 +59,10 @@ class _ShowenOfMealState extends State<ShowenOfMeal> {
                 indicatorWeight: 5,
                 labelColor: kcolor,
                 labelStyle:
-                    TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
                 tabs: [
                   Tab(
                     text: 'Information',
-                    height: 33,
                   ),
                   Tab(
                     text: 'Ingradiants',

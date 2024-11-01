@@ -32,7 +32,7 @@ class CoustomCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     child: Image.asset(
                       cardModel.image!,
-                      height: 120,
+                      height: 100,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     )),
@@ -41,7 +41,7 @@ class CoustomCard extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
                   child: Text(
                     cardModel.name,
-                    style: const TextStyle(fontSize: 22),
+                    style: const TextStyle(fontSize: 18),
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
