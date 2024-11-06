@@ -11,7 +11,7 @@ class MealsServices {
   MealsServices({required this.dio});
   Future<List<MealsModel>> getMealsServices({required String mealType}) async {
     try {
-      log('requist url : $baseUrl/complexSearch?apiKey=$apiKey&query=$mealType&number=10&offset=0');
+      log('requist url : $baseUrl/complexSearch?apiKey=$apiKey&query=$mealType&number=10&offset=10');
       Response response = await dio.get(
           '$baseUrl/complexSearch?apiKey=$apiKey&query=$mealType&number=10&offset=10');
 
@@ -26,7 +26,7 @@ class MealsServices {
       return mealsList;
     } on DioException catch (e) {
       final String exeption = e.response?.data['error']['message'] ??
-          'NO Internet Conection,try later!';
+          'there was an error';
       throw Exception(exeption);
     } catch (e) {
       // log(e.toString());

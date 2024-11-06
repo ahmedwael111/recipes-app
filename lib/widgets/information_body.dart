@@ -15,7 +15,7 @@ class InformationBody extends StatelessWidget {
 
     Uri uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
+      await launchUrl(uri, mode: LaunchMode.platformDefault);
     } else {
       throw 'Could not launch $url';
     }
@@ -35,7 +35,7 @@ class InformationBody extends StatelessWidget {
             const Divider(),
             const Text(
               'Link of Recipe on Site:',
-              style: TextStyle(fontSize: 14),
+              style: TextStyle(fontSize: 16),
             ),
             GestureDetector(
               onTap: () => _launchURL(oneMealModel

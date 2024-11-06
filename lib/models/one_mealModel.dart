@@ -36,9 +36,7 @@ class OneMealModel {
 
     // Parsing instructions
     List<InstructionStep> instructionsList =
-        (json['analyzedInstructions'] as List)
-            .expand((instruction) =>
-                (instruction['steps'] as List)) // Combine all steps
+        (json['analyzedInstructions'][0]['steps'] as List)
             .map((step) => InstructionStep.fromJson(step))
             .toList();
 
@@ -59,17 +57,15 @@ class OneMealModel {
 
 class Ingredient {
   final String original;
-  final String imageUrl;
 
   Ingredient({
     required this.original,
-    required this.imageUrl,
   });
 
   factory Ingredient.fromJson(json) {
     return Ingredient(
-        original: json['original'], imageUrl: json['image'] // Handle null image
-        );
+      original: json['original'],
+    );
   }
 }
 

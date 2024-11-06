@@ -43,7 +43,7 @@ class MealsView extends StatelessWidget {
           } else if (state is RequestMealsFaluier) {
             return const MessageOfNoInterNet();
           } else {
-            return const Center(child: Text('try ahmed'));
+            return const Center(child: Text('try again'));
           }
         },
       ),

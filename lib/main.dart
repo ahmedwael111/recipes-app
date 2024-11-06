@@ -6,6 +6,7 @@ import 'package:recipes_app/cubits/cubit/theme_cubit_cubit.dart';
 import 'package:recipes_app/views/home_view.dart';
 import 'package:recipes_app/views/meals_view.dart';
 import 'package:recipes_app/views/oneMeal_view.dart';
+import 'package:recipes_app/views/search_view.dart';
 
 void main() {
   runApp(BlocProvider(
@@ -29,14 +30,15 @@ class RecipeApp extends StatelessWidget {
         )
       ],
       child: BlocBuilder<ThemeCubitCubit, ThemeData>(
-        builder: (context, state) {
+        builder: (context, theme) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            theme:state,
+            theme: theme,
             routes: {
               HomeView.id: (context) => const HomeView(),
               MealsView.id: (context) => const MealsView(),
               OneMealView.id: (context) => const OneMealView(),
+              SearchView.id: (context) => const SearchView(),
             },
             initialRoute: HomeView.id,
           );

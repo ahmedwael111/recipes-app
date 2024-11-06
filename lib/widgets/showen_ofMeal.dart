@@ -47,19 +47,18 @@ class _ShowenOfMealState extends State<ShowenOfMeal> {
               title: Text(
                 oneMealModel!.title,
                 style: const TextStyle(
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             const Divider(),
             const TabBar(
-                // controller: ,
                 indicatorColor: kcolor,
                 indicatorWeight: 5,
                 labelColor: kcolor,
                 labelStyle:
-                    TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                    TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 tabs: [
                   Tab(
                     text: 'Information',

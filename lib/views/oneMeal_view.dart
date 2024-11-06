@@ -4,6 +4,7 @@ import 'package:recipes_app/cubits/cubit/one_meal_cubit.dart';
 import 'package:recipes_app/models/meals_model.dart';
 import 'package:recipes_app/views/meals_view.dart';
 import 'package:recipes_app/widgets/indicator.dart';
+import 'package:recipes_app/widgets/message_no_internet.dart';
 import 'package:recipes_app/widgets/showen_ofMeal.dart';
 
 class OneMealView extends StatelessWidget {
@@ -22,16 +23,11 @@ class OneMealView extends StatelessWidget {
           } else if (state is OneMealLoading) {
             return const Indicator();
           } else if (state is OneMealSuccess) {
-            return   ShowenOfMeal();
+            return  ShowenOfMeal();
           } else if (state is OneMealFuilure) {
-            return Center(
-              child: Text(
-                state.errorMessage,
-                style: const TextStyle(fontSize: 28),
-              ),
-            );
+            return const MessageOfNoInterNet();
           } else {
-            return const Center(child: Text('try ahmed'));
+            return const Center(child: Text('try again'));
           }
         },
       ),

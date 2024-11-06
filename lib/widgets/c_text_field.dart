@@ -11,10 +11,7 @@ class CostomTextfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const SearchView()),
-        );
+        Navigator.pushNamed(context, SearchView.id);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
